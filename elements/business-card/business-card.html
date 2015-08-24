@@ -1,0 +1,58 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/elements/name-tag/name-tag.html">
+
+<dom-module id="business-card">
+    <style>
+        h1 {
+            color: red;
+        }
+        name-tag {
+            margin: 10px;
+        }
+
+        .phone, .mail {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .image-wrapper {
+            width: 150px;
+            height: 180px;
+            float: left;
+            margin-right: 30px;
+            position: relative;
+        }
+
+        .image-wrapper img {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+        }
+
+    </style>
+
+    <template>
+        <name-tag name={{name}}>
+            <div class="image-wrapper"><img src={{image}}></div>
+            <h2>{{title}}</h2>
+            <div><iron-icon src="https://members.marshallcenter.org/system/files/Phone.png"></iron-icon><div class="phone">{{phone}}</div></div>
+            <div><iron-icon src="http://unameitcs.com/wp-content/uploads/2013/08/blue-mail-icon-300x300.png"></iron-icon><div class="mail">{{mail}}</div></div>
+        </name-tag>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "business-card",
+        properties: {
+            title: String,
+            name: String,
+            mail: String,
+            image: String,
+            phone: String,
+        }
+    });
+</script>

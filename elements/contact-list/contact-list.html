@@ -1,0 +1,23 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+<link rel="import" href="/elements/business-card/business-card.html">
+
+<dom-module id="contact-list">
+    <template>
+        <h1>Contact list:</h1>
+        <template is="dom-repeat" items="{{employees}}">
+            <business-card title={{item.title}} name={{item.name}} phone={{item.phone}} mail={{item.email}} image={{item.image}}></business-card>
+        </template>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "contact-list",
+        properties:{
+            employees: {
+                type: Array,
+                value:[]
+            }
+        }
+    });
+</script>

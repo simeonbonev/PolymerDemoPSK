@@ -1,0 +1,29 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="name-tag">
+    <style>
+    div {
+        min-height: 30px;
+        min-width: 30px;
+        background-color: navy;
+        color: white;
+        font-size: 20px;
+        padding-left: 30px;
+    }
+    </style>
+
+    <template>
+        <div>{{name}}</div>
+        <content></content>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: 'name-tag',
+        
+        properties: {
+            name: String
+        }
+    });
+</script>
